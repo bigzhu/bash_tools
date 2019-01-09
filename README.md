@@ -38,4 +38,12 @@ killall 很蠢, 类似 python 或者 java 启动的进程就没法 kill
 
 60s 定时 git pull 一次, 简单粗暴.
 
+### git_origin
 
+修改 git 的 url 地址, github 最近不是开放私人仓库了么, 好多项目要修改
+
+```bash
+git_origin.sh git@github.com:bigzhu/english_buoy_go.git
+```
+
+来完成修改
