@@ -47,3 +47,5 @@ git_origin.sh git@github.com:bigzhu/english_buoy_go.git
 ```
 
 来完成修改
+
+注意, 直接指定为 master 了
