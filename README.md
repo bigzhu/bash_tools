@@ -59,3 +59,9 @@ git_origin.sh git@github.com:bigzhu/english_buoy_go.git
 ### version.sh
 
 自动增加 git tags 的 version.sh, 用于发布 golang 的项目版本
+
+### set_mac_proxy.sh
+
+mac 作为历史上最蠢的操作系统, 重启后设置的全局代理参数就这么默认消失了.
+
+这里设置默认全局走 1086 proxy, 127.0.0.1 localhost 以及国内 ip 段除外
