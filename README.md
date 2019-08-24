@@ -65,3 +65,8 @@ git_origin.sh git@github.com:bigzhu/english_buoy_go.git
 mac 作为历史上最蠢的操作系统, 重启后设置的全局代理参数就这么默认消失了.
 
 这里设置默认全局走 1086 proxy, 127.0.0.1 localhost 以及国内 ip 段除外
+
+### img.sh
+压缩图片到指定目录, 并复制 markdown 格式的图片地址到剪贴板中
+
+根据需要自行修改 `blog_img_path` 和 `url_path`
