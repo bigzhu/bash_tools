@@ -6,9 +6,8 @@ file_name=$(basename "$1")
 name=$(echo "$file_name" | sed -e 's/\.[^.]*$//')
 # 后缀
 suffix=$(echo "$file_name"  | sed 's/.*\.//')
-if [ $suffix==".svg" ]; then
+if [ $suffix == "svg" ]; then
   new_file_name=$file_name
-  cp $1 $blog_img_path/$new_file_name
 else
   echo "compress $file_name"
   # 删除第一个.后的内容(后缀)
