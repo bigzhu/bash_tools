@@ -22,3 +22,5 @@ img="![$new_file_name]($url_path/$new_file_name)"
 # 复制到剪贴板
 echo $img | pbcopy
 echo "image compress done!"
+# 原始文件移动到回收站, 小心使用
+trash "$1"
