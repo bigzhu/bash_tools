@@ -60,7 +60,7 @@ git_origin.sh git@github.com:bigzhu/english_buoy_go.git
 
 自动增加 git tags 的 version.sh, 用于发布 golang 的项目版本
 
-### set_mac_proxy.sh
+### mac_proxy.sh
 
 mac 作为历史上最蠢的操作系统, 重启后设置的全局代理参数就这么默认消失了.
 
@@ -69,4 +69,4 @@ mac 作为历史上最蠢的操作系统, 重启后设置的全局代理参数�
 ### img.sh
 压缩图片到指定目录, 并复制 markdown 格式的图片地址到剪贴板中
 
-根据需要自行修改 `blog_img_path` 和 `url_path`
+根据需要自行修改 `blog_img_path` 和 `url_path` 为自己需要的路径
