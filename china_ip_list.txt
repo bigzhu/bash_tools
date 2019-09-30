@@ -1,3 +1,9 @@
+*.hacpai.com
+hacpai.com
+*.zhimg.com
+*.weibocdn.com
+*.tieba.com
+*.yousuu.com
 *.qcloudimg.com
 *.0daydown.com
 *.126.com
