@@ -16,8 +16,7 @@
 ### install.sh
 把当前目录的 *.sh 文件, 链接到 `/usr/local/bin/`
 
-也是用来来安装本项目的脚本, 先执行.
-
+也是用来来安装本项目的脚本, 先执行.  
 如果链接已经存在, 添加 `-f` 来覆盖链接
 
 ```
@@ -60,11 +59,15 @@ git_origin.sh git@github.com:bigzhu/english_buoy_go.git
 
 自动增加 git tags 的 version.sh, 用于发布 golang 的项目版本
 
-### mac_proxy.sh
+### proxy_mac.sh
 
 mac 作为历史上最蠢的操作系统, 重启后设置的全局代理参数就这么默认消失了.
 
 这里设置默认全局走 1086 proxy, 127.0.0.1 localhost 以及国内 ip 段除外
+
+### unproxy_mac.sh
+
+关闭上面的代理
 
 ### img.sh
 压缩图片到指定目录, 并复制 markdown 格式的图片地址到剪贴板中

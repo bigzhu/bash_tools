@@ -1,3 +1,4 @@
+*.acgvideo.com
 *.hacpai.com
 hacpai.com
 *.zhimg.com
