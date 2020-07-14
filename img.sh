@@ -1,5 +1,5 @@
 #! /bin/bash
-blog_img_path="$HOME/Project/sites/blog/cheese/assets/img"
+blog_img_path="$HOME/Project/blog/cheese/assets/img"
 url_path="/assets/img"
 # 剔除输入的文件的路径
 file_name=$(basename "$1")
@@ -17,6 +17,9 @@ else
   cjpeg -quality 44 "$1" > "$blog_img_path/$new_file_name"
 fi
 
+
+# encode file name
+new_file_name=$(echo $new_file_name | python -c "import urllib.parse;print (urllib.parse.quote(input()))")
 # markdow 格式
 img="![$new_file_name]($url_path/$new_file_name)"
 # 复制到剪贴板
