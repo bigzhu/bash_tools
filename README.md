@@ -1,9 +1,10 @@
 # bash_tools
+
 一些封装好现成可用的 bash 脚本
 
 ## install
 
-运行 
+运行
 
 ```
 ./install.sh
@@ -13,8 +14,10 @@
 就可以在任意目录使用
 
 ## 脚本介绍
+
 ### install.sh
-把当前目录的 *.sh 文件, 链接到 `/usr/local/bin/`
+
+把当前目录的 \*.sh 文件, 链接到 `/usr/local/bin/`
 
 也是用来来安装本项目的脚本, 先执行.  
 如果链接已经存在, 添加 `-f` 来覆盖链接
@@ -33,9 +36,10 @@
 ps -ef|grep bigzhu.py
 kill 33843784738
 ```
+
 麻烦不说还容易出错.
 
-#### killall 
+#### killall
 
 killall 很蠢, 类似 python 或者 java 启动的进程就没法 kill
 
@@ -70,6 +74,11 @@ mac 作为历史上最蠢的操作系统, 重启后设置的全局代理参数�
 关闭上面的代理
 
 ### img.sh
+
 压缩图片到指定目录, 并复制 markdown 格式的图片地址到剪贴板中
 
 根据需要自行修改 `blog_img_path` 和 `url_path` 为自己需要的路径
+
+### file.sh
+
+检查文件是否已经存在, 不存在则移动文件到 blog 目录, 并复制到剪贴板, 用于附加附件到 markdown 知识库

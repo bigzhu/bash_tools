@@ -21,7 +21,8 @@ fi
 # encode file name
 new_file_name=$(echo $new_file_name | python -c "import urllib.parse;print (urllib.parse.quote(input()))")
 # markdow 格式
-img="![$new_file_name]($url_path/$new_file_name)"
+#img="![$new_file_name]($url_path/$new_file_name)"
+img="{{< figure src=\"$url_path/$new_file_name\" width=\"40%\" >}}"
 # 复制到剪贴板
 echo $img | pbcopy
 echo "image compress done!"
