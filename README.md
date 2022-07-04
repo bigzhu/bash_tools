@@ -7,7 +7,7 @@
 运行
 
 ```
-./install.sh
+./install.sh *.sh
 ```
 
 确定 `/usr/local/bin/` 在环境变量 `$PATH` 中
