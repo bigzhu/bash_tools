@@ -4,7 +4,7 @@
 files_path="$HOME/Dropbox/cheese/files/"
 file_name=$(basename "$1")
 target_file_name=${file_name// /_}
-target_file__path="./files/$target_file_name"
+target_file__path="file:./files/$target_file_name"
 if test -f "$files_path$target_file_name"; then
   echo "$files_path$target_file_name exists."
 else
@@ -12,4 +12,4 @@ else
   echo "$file_name move to $files_path$target_file_name"
 fi
 markdown_file="[$file_name]($target_file__path)"
-echo $markdown_file | pbcopy
+echo "$markdown_file" | pbcopy
