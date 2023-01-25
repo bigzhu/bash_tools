@@ -1,8 +1,8 @@
 #! /bin/bash
 # brew install mozjpeg
 # brew install trash
-blog_img_path="$HOME/Dropbox/cheese/assets/img"
-url_path="/assets/img"
+blog_img_path="$HOME/Dropbox/cheese/images"
+url_path="./images"
 # 剔除输入的文件的路径
 file_name=$(basename "$1")
 name=$(echo "$file_name" | sed -e 's/\.[^.]*$//')
