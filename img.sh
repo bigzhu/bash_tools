@@ -16,7 +16,8 @@ else
   new_file_name="$name.jpg"
   #echo $file_name, $name, $new_file_name
   # 压缩图片到对应路径, 依赖 brew install mozjpeg
-  cjpeg -quality 44 "$1" > "$blog_img_path/$new_file_name"
+  #cjpeg -quality 44 "$1" > "$blog_img_path/$new_file_name"
+  djpeg "$1" | cjpeg -quality 44 -progressive -optimize > "$blog_img_path/$new_file_name"
 fi
 
 
