@@ -32,4 +32,4 @@ img="![](https://bigzhu.net$url_path/$new_file_name)"
 echo $img | pbcopy
 echo "image compress done!"
 # 原始文件移动到回收站, 小心使用
-#trash "$1"
+trash "$1"
