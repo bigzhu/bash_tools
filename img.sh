@@ -1,5 +1,6 @@
 #! /bin/bash
 # brew install mozjpeg trash
+# 避免不要使用 jpeg-turbo 带的 cjpeg, 这是个垃圾
 blog_img_path="$HOME/Dropbox/cheese/images"
 url_path="./images"
 # 剔除输入的文件的路径
@@ -26,8 +27,7 @@ if [ $suffix == "svg" ]; then
   mv $1 $blog_img_path/
 else
   echo "compress $file_name"
-  #cjpeg -quality 44 "$1" > "$blog_img_path/$new_file_name"
-  djpeg "$1" | cjpeg -quality 44 -progressive -optimize > "$blog_img_path/$new_file_name"
+  /opt/homebrew/opt/mozjpeg/bin/cjpeg -quality 44 "$1" > "$blog_img_path/$new_file_name"
 fi
 
 
