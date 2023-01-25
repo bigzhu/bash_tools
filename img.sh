@@ -27,7 +27,8 @@ if [ $suffix == "svg" ]; then
   mv $1 $blog_img_path/
 else
   echo "compress $file_name"
-  /opt/homebrew/opt/mozjpeg/bin/cjpeg -quality 44 "$1" > "$blog_img_path/$new_file_name"
+  #/opt/homebrew/opt/mozjpeg/bin/cjpeg -quality 44 "$1" > "$blog_img_path/$new_file_name"
+  /opt/homebrew/opt/mozjpeg/bin/cjpeg "$1" > "$blog_img_path/$new_file_name"
 fi
 
 
