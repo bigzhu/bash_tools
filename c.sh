@@ -1,4 +1,5 @@
 #! /bin/bash
+#为 cheese 项目的附件功能, 分辨是图片还是文件, 进行压缩或者移动到对应文件
 file_type='?'
 if [ $# != 1 ]; then
 	echo "parameter error"
