@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 #为 cheese 项目的附件功能, 分辨是图片还是文件, 进行压缩或者移动到对应文件
 file_type='?'
 if [ $# != 1 ]; then
@@ -6,7 +6,6 @@ if [ $# != 1 ]; then
 else
 	len3=$(xxd -p -l 3 "$1")
 	len4=$(xxd -p -l 4 "$1")
-	3c3f78
 	if [ "$len3" == "ffd8ff" ]; then
 		file_type='jpg'
 		echo "The type is jpg"

@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 # brew install mozjpeg trash
 # 避免不要使用 jpeg-turbo 带的 cjpeg, 这是个垃圾
 blog_img_path="$HOME/cheese/images"
@@ -25,5 +25,17 @@ else
 	trash "$1"
 fi
 
-echo $markdow_img_link | pbcopy
+case $(uname) in
+Darwin)
+	echo $markdow_img_link | pbcopy
+	# mac 下才设置, rm 转为移动垃圾箱
+	# brew install trash
+	# alias rm="trash"
+	;;
+Linux)
+	# commands for Linux go here
+	echo $markdow_img_link | xclip -selection clipboard
+	;;
+esac
+
 echo "image compress done!"
