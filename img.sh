@@ -21,7 +21,15 @@ if [ "$2" = "svg" ] || [ "$2" = "webp" ] || [ "$2" = "gif" ]; then
 else
 	#/opt/homebrew/opt/mozjpeg/bin/cjpeg -quality 44 "$1" > "$blog_img_path/$new_file_name"
 	echo "compress $file_name"
-	/opt/homebrew/opt/mozjpeg/bin/cjpeg "$1" >"$blog_img_path/$file_name"
+	case $(uname) in
+	Darwin)
+		/opt/homebrew/opt/mozjpeg/bin/cjpeg "$1" >"$blog_img_path/$file_name"
+		;;
+	Linux)
+		/opt/mozjpeg/bin/cjpeg "$1" >"$blog_img_path/$file_name"
+		;;
+	esac
+	# sudo apt-get install trash-cli
 	trash "$1"
 fi
 
