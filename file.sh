@@ -6,7 +6,15 @@ file_name=$(basename "$1")
 target_file_name=${file_name// /_}
 target_file__path="file:./files/$target_file_name"
 if test -f "$files_path$target_file_name"; then
-	echo "$files_path$target_file_name exists."
+	if [[ $(md5 -q "$1") = $(md5 -q "$files_path$target_file_name") ]]; then
+		echo "$files_path$target_file_name exists."
+	else
+		# 仅名字一样, 内容不一样
+		target_file_name=$$.$target_file_name
+		target_file__path="file:./files/$target_file_name"
+		mv "$1" "$files_path$target_file_name"
+		echo "$file_name move to $files_path$target_file_name"
+	fi
 else
 	mv "$1" "$files_path$target_file_name"
 	echo "$file_name move to $files_path$target_file_name"
