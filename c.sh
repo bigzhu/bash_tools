@@ -31,7 +31,7 @@ else
 	fi
 fi
 if [ "$file_type" = "svg" ] || [ "$file_type" = "webp" ] || [ "$file_type" = "gif" ] || [ "$file_type" = "jpg" ] || [ "$file_type" = "png" ]; then
-	exec img.sh $1 $file_type
+	exec img.sh "$1" "$file_type"
 else
-	exec file.sh $1
+	exec file.sh "$1"
 fi
