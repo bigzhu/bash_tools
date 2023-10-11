@@ -5,7 +5,9 @@ blog_img_path="$HOME/cheese/images"
 url_path="images"
 # 剔除输入的文件的路径
 file_name=$(basename "$1")
-
+file_name=${file_name%.*}
+file_name=$file_name.webp
+echo $file_name
 # 检查文件是否存在
 if [ -f "$blog_img_path/$file_name" ]; then
 	echo "$blog_img_path/$file_name exists."
@@ -23,10 +25,13 @@ else
 	echo "compress $file_name"
 	case $(uname) in
 	Darwin)
-		/opt/homebrew/opt/mozjpeg/bin/cjpeg "$1" >"$blog_img_path/$file_name"
+		# /opt/homebrew/opt/mozjpeg/bin/cjpeg "$1" >"$blog_img_path/$file_name"
+		magick "$1" $blog_img_path/"$file_name"
 		;;
 	Linux)
-		/opt/mozjpeg/bin/cjpeg "$1" >"$blog_img_path/$file_name"
+		# /opt/mozjpeg/bin/cjpeg "$1" >"$blog_img_path/$file_name"
+		convert "$1" $blog_img_path/"$file_name"
+
 		;;
 	esac
 	# sudo apt-get install trash-cli
