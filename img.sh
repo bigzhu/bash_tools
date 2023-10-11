@@ -26,12 +26,13 @@ else
 	case $(uname) in
 	Darwin)
 		# /opt/homebrew/opt/mozjpeg/bin/cjpeg "$1" >"$blog_img_path/$file_name"
-		magick "$1" $blog_img_path/"$file_name"
+		# brew install imagemagick
+		magick "$2" $blog_img_path/"$file_name"
 		;;
 	Linux)
 		# /opt/mozjpeg/bin/cjpeg "$1" >"$blog_img_path/$file_name"
+		# sudo apt install imagemagick
 		convert "$1" $blog_img_path/"$file_name"
-
 		;;
 	esac
 	# sudo apt-get install trash-cli
