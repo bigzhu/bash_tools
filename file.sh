@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # 1. try move file to the blog path if not exits
 # 2. copy markdown file path to pbcopy
-files_path="$HOME/cheese/files/"
+files_path="$HOME/Sync/home/cheese/files/"
 file_name=$(basename "$1")
 target_file_name=${file_name// /_}
 target_file__path="file:./files/$target_file_name"

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # brew install mozjpeg trash
 # 避免不要使用 jpeg-turbo 带的 cjpeg, 这是个垃圾
-blog_img_path="$HOME/cheese/images"
+blog_img_path="$HOME/Sync/home/cheese/images"
 url_path="images"
 # 剔除输入的文件的路径
 file_name=$(basename "$1")
