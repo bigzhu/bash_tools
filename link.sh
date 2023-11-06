@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
 # config
 ln -sf ~/Sync/config/nvim ~/.config
@@ -12,4 +12,7 @@ ln -sf ~/Sync/home/p10k.zsh ~/.p10k.zsh
 ln -sf ~/Sync/home/gitconfig ~/.gitconfig
 
 # Library
-ln -sf ~/Sync/Library/Rime ~/Library
+
+if [[ $(uname) == 'Darwin' ]]; then
+	ln -sf ~/Sync/Library/Rime ~/Library
+fi
