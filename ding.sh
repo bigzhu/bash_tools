@@ -24,7 +24,7 @@ adb -s FA69T0307042 shell input tap 330 1014
 rnd=$(rand 10 20)
 sleep "${rnd}s"
 adb -s FA69T0307042 shell input tap 507 1133
-sleep "2s"
+sleep "10s"
 adb -s FA69T0307042 shell am force-stop com.alibaba.android.rimet
-sleep "6s"
+sleep "10s"
 adb -s FA69T0307042 shell input keyevent 26
