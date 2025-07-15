@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 networksetup -setsocksfirewallproxystate "Wi-Fi" off
 # 显示 工作 状态
 echo "socks proxy status:"

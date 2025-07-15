@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 killBz(){
     process_name=$1
     #pid=$(ps -aux | grep "$1" | grep -v grep | grep -v kill.sh| awk '{print $2}'|head -1)
