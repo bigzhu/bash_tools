@@ -10,7 +10,8 @@ if test -f "$files_path$target_file_name"; then
 		echo "$files_path$target_file_name exists."
 	else
 		# 仅名字一样, 内容不一样
-		target_file_name=$$.$target_file_name
+		timestamp=$(date +%Y%m%d_%H%M%S)
+		target_file_name=${timestamp}_$target_file_name
 		target_file__path="file:./files/$target_file_name"
 		mv "$1" "$files_path$target_file_name"
 		echo "$file_name move to $files_path$target_file_name"
