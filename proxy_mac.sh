@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # 设置 socks 代理
-networksetup -setsocksfirewallproxy "Wi-fi" 127.0.0.1 7891
+networksetup -setsocksfirewallproxy "Wi-Fi" 127.0.0.1 7891
 # 显示 工作 状态
 echo "socks proxy status:"
 networksetup -getsocksfirewallproxy "Wi-Fi"

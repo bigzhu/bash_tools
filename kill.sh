@@ -1,20 +1,48 @@
 #!/usr/bin/env bash
-killBz(){
-    process_name=$1
-    #pid=$(ps -aux | grep "$1" | grep -v grep | grep -v kill.sh| awk '{print $2}'|head -1)
-    #mac 下的 ps 没有参数 aux, 改为 ef
-    #vim 的要剔除
-    pid=$(ps -ef | grep $process_name | grep -v grep | grep -v kill.sh| grep -v vim| awk '{print $2}'|head -1)
-    if [[ -n $pid ]]; then
-        echo "kill old $process_name pid=$pid"
-        kill $pid
+
+set -e
+
+# Display usage information
+usage() {
+    echo "Usage: $0 <process_name>"
+    echo "Kill a process by name"
+    echo ""
+    echo "Example:"
+    echo "  $0 python"
+    echo "  $0 node"
+    exit 1
+}
+
+killBz() {
+    local process_name="$1"
+    
+    # Find process ID, excluding grep, this script, and vim
+    local pid=$(ps -ef | grep "$process_name" | grep -v grep | grep -v "$(basename "$0")" | grep -v vim | awk '{print $2}' | head -1)
+    
+    if [[ -n "$pid" ]]; then
+        echo "Killing process '$process_name' with PID=$pid"
+        if kill "$pid"; then
+            echo "Process '$process_name' (PID=$pid) killed successfully"
+        else
+            echo "Failed to kill process '$process_name' (PID=$pid)" >&2
+            exit 1
+        fi
     else
-        echo "$process_name Does not exist"
+        echo "Process '$process_name' not found or not running"
+        exit 1
     fi
 }
-if [ $# -eq 0 ]
-then
-    :
-else
-    killBz $1   
+
+# Check if parameter is provided
+if [ $# -eq 0 ]; then
+    echo "Error: No process name provided"
+    usage
 fi
+
+# Check if parameter is not empty
+if [ -z "$1" ]; then
+    echo "Error: Process name cannot be empty"
+    usage
+fi
+
+killBz "$1"
